@@ -1,8 +1,12 @@
 /*
-** http://code.google.com/apis/books/docs/v1/getting_started.html
+** Backbone-books by Sebastien Chopin
+** @Atinux
+** http://www.atinux.fr
 */
+
 (function () {
 
+// Please use your Google API key, be cool :) (http://code.google.com/apis/books/docs/v1/getting_started.html)
 var Book, Books, BookView, LibraryView, apiKey = 'AIzaSyB4ro-tnpGwr6WXHs3_wBF3hKFnXQv8pfo';
 
 // Model
@@ -31,9 +35,9 @@ BookView = Backbone.View.extend({
 	},
 	showBookDetail: function () {
 		var parent = this.options.parent,
-				scrollTop = parent.$('.library').scrollTop(),
-				bookDetail = parent.$('.bookDetail'),
-				that = this;
+			scrollTop = parent.$('.library').scrollTop(),
+			bookDetail = parent.$('.bookDetail'),
+			that = this;
 		parent.showBookDetail = true;
 		parent.bookDetailTop = scrollTop;
 		bookDetail.css({
@@ -131,7 +135,7 @@ LibraryView = Backbone.View.extend({
 	hideBookDetailScroll: function () {
 		if (this.showBookDetail) {
 			var actualTop = this.$('.library').scrollTop(),
-					marge = 150;
+				marge = 150;
 			if (actualTop > this.bookDetailTop + marge || actualTop < this.bookDetailTop - marge) {
 				this.showBookDetail = false;
 				this.hideBookDetail();
@@ -143,10 +147,10 @@ LibraryView = Backbone.View.extend({
 	},
 	moreBooks: function () {
 		var totalHeight = this.$('.library > div').height(),
-				scrollTop = this.$('.library').scrollTop() + this.$('.library').height(),
-				lastSearch = this.lastSearch,
-				that = this,
-				marge = 200;
+			scrollTop = this.$('.library').scrollTop() + this.$('.library').height(),
+			lastSearch = this.lastSearch,
+			that = this,
+			marge = 200;
 		if (scrollTop + marge >= totalHeight && !this.loadingMore && this.page < this.nbMaxPage) {
 			this.loadingMore = true;
 			this.page++;
@@ -174,6 +178,7 @@ LibraryView = Backbone.View.extend({
 	}
 });
 
+// Move the Twitter logo, make it fly!
 var animateTwitterLogo = function (el) {
 	el.animate({
 		bottom: 40
