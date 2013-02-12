@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Comptatible" content="IE=edge,chrome=1">
+	<title>Backbone.js Books - Google Books API and Backbone.js</title>
+	<meta name="description" content="Backbone Books is a little application using the Google Books API and coded with Backbone.js library. This application has been created by Sébastien Chopin.">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link href="http://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1 class="title">Backbone.js Books</h1>
+	<div id="content">
+		<div class="searchBar">
+			<div class="search">
+				Search : <input type="text" name="search" autocomplete="off" class="searchValue" value="Neuromarketing" />
+				<img src="assets/images/loader.gif" alt="Loading..." class="spinner" />
+			</div>
+		</div>
+		<div class="library">
+			<div style="display:table;width:100%;height:100%;">
+				<img src="assets/images/shadow-search.png" style="position:absolute;left: 0px;top: 0px;"/>
+				<img src="assets/images/shadow-search-right.png" style="position:absolute;right: 0px;top: 0px;"/>
+				<div class="leftBar"></div>
+				<div class="books"></div>
+				<div class="rightBar"></div>
+			</div>
+			<div class="bookDetail"></div>
+		</div>
+	</div>
+	<a href="http://www.twitter.com/Atinux" target="_blank" class="twitter"><img src="assets/images/twitter.png" alt="Atinux's Twitter" /></a>
+	<script type="text/template" id="bookTemplate">
+		<img src="<%= (model.attributes.volumeInfo.imageLinks.thumbnail ? model.attributes.volumeInfo.imageLinks.thumbnail : 'http://placehold.it/100x150/eeeeee/999999') %>" alt="" class="book" />
+	</script>
+	<script type="text/template" id="bookDetailTemplate">
+		<a class="close">x</a>
+		<div class="imgBook">
+			<img src="<%= (hash.volumeInfo.imageLinks.thumbnail ? hash.volumeInfo.imageLinks.thumbnail : 'http://placehold.it/200x260/eeeeee/999999') %>" />
+		</div>
+		<h1><%= hash.volumeInfo.title %></h1>
+		<%= (hash.volumeInfo.subtitle ? '<h2>'+hash.volumeInfo.subtitle+'</h2>' : '') %>
+		<p><%= (hash.volumeInfo.description ? hash.volumeInfo.description : 'No description found') %></p>
+		<b>Google link :</b> <a href="http://books.google.fr/books?id=<%= hash.id %>" target="_blank">http://books.google.fr/books?id=<%= hash.id %></a>
+	</script>
+	<!-- Thirt-Party Libraries (Order matters) -->
+	<script type="text/javascript" src="assets/js/libs/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/libs/underscore-min.js"></script>
+	<script type="text/javascript" src="assets/js/libs/backbone-min.js"></script>
+	
+	<!-- Application core (Order matters) -->
+	<script type="text/javascript" src="src/app.js"></script>
+	
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-27481530-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+</html>
