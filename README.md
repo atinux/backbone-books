@@ -1,4 +1,4 @@
-<img src="http://www.atinux.fr/wp-content/uploads/2013/02/backbone-books.png" />
+<a href="http://www.atinux.fr/backbone-books/" target="_blank"><img src="http://www.atinux.fr/wp-content/uploads/2013/02/backbone-books.png" /></a>
 
 Backbone.js Books
 ==============
