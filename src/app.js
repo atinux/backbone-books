@@ -194,16 +194,18 @@ var animateTwitterLogo = function (el) {
 };
 
 // Run application
-jQuery(function () {
+$(function () {
 	new LibraryView({
 		el: $('#content')
 	});
 	var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-	if (width >= 430) {
+	var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+	if (width > 430 && height >= 550) {
 		animateTwitterLogo($('.twitter'));
 	}
-	else {
+	else if (width <= 430) {
 		$('body').scrollTop(1);
+		$('.library').css('height', height - 40 - 50); // social + search bar + body padding
 	}
 });
 

@@ -1,6 +1,11 @@
+html {
+	margin: 0;
+	padding: 0;
+}
 html, body {
 	background: url(../images/bg.jpg);
 	font-family: 'Sofia', cursive;
+	margin: 5px;
 }
 
 .searchBar {
@@ -283,6 +288,9 @@ a {
 	.search input[type="text"] {
 		width: 140px;
 	}
+	.searchBar {
+		margin-top: 5px;
+	}
 	.library {
 		height: 383px;
 	}
@@ -300,5 +308,11 @@ a {
 	}
 	.social {
 		margin-top: 5px;
+		overflow: hidden;
+	}
+}
+@media all and (max-height: 550px) {
+	.twitter {
+		display: none
 	}
 }
