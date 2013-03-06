@@ -8,6 +8,8 @@
 
 // Please use your Google API key, be cool :) (http://code.google.com/apis/books/docs/v1/getting_started.html)
 var Book, Books, BookView, LibraryView, apiKey = 'AIzaSyB4ro-tnpGwr6WXHs3_wBF3hKFnXQv8pfo';
+// Second ApiKey
+apiKey = 'AIzaSyAUpierWu7ydjKsa2141jS55CCnqu7JXZo';
 
 // Model
 Book = Backbone.Model.extend(),
@@ -196,7 +198,13 @@ jQuery(function () {
 	new LibraryView({
 		el: $('#content')
 	});
-	animateTwitterLogo($('.twitter'));
+	var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	if (width >= 430) {
+		animateTwitterLogo($('.twitter'));
+	}
+	else {
+		$('body').scrollTop(1);
+	}
 });
 
 })();
