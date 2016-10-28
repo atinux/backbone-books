@@ -34,12 +34,12 @@
 	</div>
 	<a href="https://www.twitter.com/Atinux" target="_blank" class="twitter"><img src="assets/images/twitter.png" alt="Atinux's Twitter" /></a>
 	<script type="text/template" id="bookTemplate">
-		<img src="<%= (model.attributes.volumeInfo.imageLinks.thumbnail ? model.attributes.volumeInfo.imageLinks.thumbnail : 'http://placehold.it/100x150/eeeeee/999999') %>" alt="" class="book" />
+		<img src="<%= (model.attributes.volumeInfo.imageLinks.thumbnail ? model.attributes.volumeInfo.imageLinks.thumbnail.replace('http://', 'https://') : 'http://placehold.it/100x150/eeeeee/999999') %>" alt="" class="book" />
 	</script>
 	<script type="text/template" id="bookDetailTemplate">
 		<a class="close">x</a>
 		<div class="imgBook">
-			<img src="<%= (hash.volumeInfo.imageLinks.thumbnail ? hash.volumeInfo.imageLinks.thumbnail : 'https://placehold.it/200x260/eeeeee/999999') %>" />
+			<img src="<%= (hash.volumeInfo.imageLinks.thumbnail ? hash.volumeInfo.imageLinks.thumbnail.replace('http://', 'https://') : 'https://placehold.it/200x260/eeeeee/999999') %>" />
 		</div>
 		<h1><%= hash.volumeInfo.title %></h1>
 		<%= (hash.volumeInfo.subtitle ? '<h2>'+hash.volumeInfo.subtitle+'</h2>' : '') %>
