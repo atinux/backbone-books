@@ -7,7 +7,7 @@
 	<title>Backbone.js Books - Web app with Backbone.js + Google API</title>
 	<meta name="description" content="Backbone Books is a little application using the Google Books API and coded with Backbone.js library. This application has been created by Sébastien Chopin.">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<link href="http://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<img src="assets/images/backbonejs-books.png" class="hidden"/>
@@ -44,19 +44,19 @@
 			<div class="bookDetail"></div>
 		</div>
 	</div>
-	<a href="http://www.twitter.com/Atinux" target="_blank" class="twitter"><img src="assets/images/twitter.png" alt="Atinux's Twitter" /></a>
+	<a href="https://www.twitter.com/Atinux" target="_blank" class="twitter"><img src="assets/images/twitter.png" alt="Atinux's Twitter" /></a>
 	<script type="text/template" id="bookTemplate">
 		<img src="<%= (model.attributes.volumeInfo.imageLinks.thumbnail ? model.attributes.volumeInfo.imageLinks.thumbnail : 'http://placehold.it/100x150/eeeeee/999999') %>" alt="" class="book" />
 	</script>
 	<script type="text/template" id="bookDetailTemplate">
 		<a class="close">x</a>
 		<div class="imgBook">
-			<img src="<%= (hash.volumeInfo.imageLinks.thumbnail ? hash.volumeInfo.imageLinks.thumbnail : 'http://placehold.it/200x260/eeeeee/999999') %>" />
+			<img src="<%= (hash.volumeInfo.imageLinks.thumbnail ? hash.volumeInfo.imageLinks.thumbnail : 'https://placehold.it/200x260/eeeeee/999999') %>" />
 		</div>
 		<h1><%= hash.volumeInfo.title %></h1>
 		<%= (hash.volumeInfo.subtitle ? '<h2>'+hash.volumeInfo.subtitle+'</h2>' : '') %>
 		<p><%= (hash.volumeInfo.description ? hash.volumeInfo.description : 'No description found') %></p>
-		<a href="http://books.google.fr/books?id=<%= hash.id %>" target="_blank"><b>See it on Google.</b></a>
+		<a href="https://books.google.fr/books?id=<%= hash.id %>" target="_blank"><b>See it on Google.</b></a>
 	</script>
 	<!-- Thirt-Party Libraries (Order matters) -->
 	<script type="text/javascript" src="assets/js/libs/jquery.min.js"></script>
