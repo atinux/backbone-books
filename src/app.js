@@ -178,29 +178,11 @@ LibraryView = Backbone.View.extend({
 	}
 });
 
-// Move the Twitter logo, make it fly!
-var animateTwitterLogo = function (el) {
-	el.animate({
-		bottom: 40
-	}, 3000, function () {
-		el.animate({
-			bottom: 10
-		}, 1000, function () {
-			animateTwitterLogo(el);
-		});
-	});
-};
-
 // Run application
 $(function () {
 	new LibraryView({
 		el: $('#content')
 	});
-	var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-	var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-	if (width > 430 && height >= 550) {
-		animateTwitterLogo($('.twitter'));
-	}
 	else if (width <= 430) {
 		$('body').scrollTop(1);
 		$('.library').css('height', height - 40 - 50); // social + search bar + body padding
