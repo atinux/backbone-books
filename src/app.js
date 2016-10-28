@@ -7,9 +7,7 @@
 (function () {
 
 // Please use your Google API key, be cool :) (http://code.google.com/apis/books/docs/v1/getting_started.html)
-var Book, Books, BookView, LibraryView, apiKey = 'AIzaSyB4ro-tnpGwr6WXHs3_wBF3hKFnXQv8pfo';
-// Second ApiKey
-apiKey = 'AIzaSyAUpierWu7ydjKsa2141jS55CCnqu7JXZo';
+var Book, Books, BookView, LibraryView, apiKey = 'AIzaSyDc-tRkaySQ-w7PiKupZY2GQzn84RDdzvc';
 
 // Model
 Book = Backbone.Model.extend(),
