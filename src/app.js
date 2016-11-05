@@ -183,10 +183,6 @@ $(function () {
 	new LibraryView({
 		el: $('#content')
 	});
-	else if (width <= 430) {
-		$('body').scrollTop(1);
-		$('.library').css('height', height - 40 - 50); // social + search bar + body padding
-	}
 });
 
 })();
